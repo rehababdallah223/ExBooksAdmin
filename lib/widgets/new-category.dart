@@ -18,7 +18,6 @@ class NewCategory extends StatefulWidget
 class NewCategoryState extends State<NewCategory>
 
 {
-  final idController = TextEditingController();
   final titleController = TextEditingController();
 
 //------------the constructor -----------------
@@ -29,7 +28,7 @@ class NewCategoryState extends State<NewCategory>
   void submitted ()
   {
     final enterdTitle = titleController.text;
-    final enteredid = idController.text;
+    final enteredid = 'c12';
 
     if(enterdTitle.isEmpty || enteredid.isEmpty)
     {
@@ -58,12 +57,12 @@ class NewCategoryState extends State<NewCategory>
               controller: titleController,
               onSubmitted: (_) => submitted() ,
             ),
-            TextField(
-              decoration: InputDecoration(labelText: 'Id'),
-              controller: idController,
-//              keyboardType: TextInputType.number,
-              onSubmitted: (_) => submitted() ,
-            ),
+//             TextField(
+//               decoration: InputDecoration(labelText: 'Id'),
+//               controller: idController,
+// //              keyboardType: TextInputType.number,
+//               onSubmitted: (_) => submitted() ,
+//             ),
             FlatButton(
               child: Text('Add Category'),
               onPressed: submitted,
